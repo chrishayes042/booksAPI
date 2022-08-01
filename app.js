@@ -4,8 +4,13 @@ function getBooks(){
 
     fetch(`https://openlibrary.org/isbn/${isbn}.json`)
     .then(res => res.json())
-    .then(res => {
-        console.log(res.data);
-    }).catch(err => 
-        console.warn(`error`, err));
+    
+    .then((res) => { 
+        let title = res;
+        title.map(`${full_title}`);
+            document.getElementById('titleData').value = title;          
+        })
+    .catch(err => console.warn(`error`, err));
+        
+    let 
 }
