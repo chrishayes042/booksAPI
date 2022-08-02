@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Find a book</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h2>Book Search</h2>
-        <input id="insertBook">
-        <button id="searchBtn" onclick="getBooks()">Search</button>
+      <h2>Book Search</h2>
+      <h4>Enter ISBN #</h4>
+      <input id="insertBook" />
+      <button id="searchBtn" onclick="getBooks()">Search</button>
     </div>
-    <div id="titleData"></div>
+    <div id="titleContainer">
+      <div id="titleDiv">
+        <div id="titleDiv2"></div>
+        Title:
+        <span id="titleData"></span>
+      </div>
+    </div>
+    <div id="author">
+      Author:
+      <span id="someoneData"></span>
+    </div>
+    <div id="date">
+      Published Date:
+      <span id="dateData"></span>
+    </div>
+    <div id="publisher">
+      Publisher:
+      <span id="pubData"></span>
+    </div>
+
     <script type="text/javascript" src="app.js"></script>
-</body>
+  </body>
 </html>

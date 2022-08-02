@@ -1,3 +1,16 @@
-.container{
-    text-align: center;
+.container {
+  text-align: center;
+}
+#titleContainer {
+  text-align: center;
+  padding-top: 2rem;
+}
+/* #titleDiv {
+  float: center;
+} */
+
+#date,
+#author,
+#publisher {
+  text-align: center;
 }
