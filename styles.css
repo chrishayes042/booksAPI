@@ -11,6 +11,7 @@
 
 #date,
 #author,
-#publisher {
+#publisher,
+#message {
   text-align: center;
 }
