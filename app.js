@@ -1,6 +1,7 @@
 function getBooks() {
   let isbn = document.getElementById("insertBook").value; // getting the value from user input text field
   let isbn2 = isbn.trim(); // trim incase user added a space at the front
+  let images = {};
   // clearing all the fields
   document.getElementById("dateData").innerHTML = "";
   document.getElementById("titleData").innerHTML = "";
@@ -17,10 +18,24 @@ function getBooks() {
       document.getElementById("dateData").innerHTML = res.publish_date;
       document.getElementById("titleData").innerHTML = res.title;
       document.getElementById("pubData").innerHTML = res.publishers;
+
+      fetch(`https://covers.openlibrary.org/b/isbn/${isbn2}.jpg`)
+        // .then((response) => response.json())
+        .then((data) => {
+          images = data;
+          Object.keys(data).forEach((key) => {
+            let ele = document.createElement("span");
+            let img = document.createElement("img");
+            img.setAttribute("src", data[key]);
+            ele.appendChild(img);
+            document.getElementById("imgtag").appendChild(ele);
+          });
+        });
+
       // How to get the website from this data??
       // document.getElementById("buyData").innerHTML = res.source_records[0];
       // if the json has this object
-      if (res.authors.length >= 1) {
+      if (res.authors.length != undefined) {
         // for some reason, the api sets the author in an array
         let author = res.authors[0].key;
         // calling another api to get author information
