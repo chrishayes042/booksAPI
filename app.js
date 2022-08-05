@@ -41,5 +41,11 @@ function getBooks() {
           });
       }
     })
-    .catch((err) => console.warn(`error`, err));
+    .catch((err) => {
+      console.warn(`error`, err);
+      alert(
+        `                Error, book not found in the Open Library API`,
+        err
+      );
+    });
 }
